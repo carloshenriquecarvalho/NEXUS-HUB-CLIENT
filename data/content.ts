@@ -1,8 +1,8 @@
 export const campaigns = {
     "botox": {
-        title: "Title Of My First Campaign",
-        subtitle: "Yes, you can do it my litle bro! lotem ipsum hahahaha",
-        mainButton: "Agende Agora!",
-        secondaryBytton: "Conheça Nossos Métodos"
+        hero: {
+            title: "Hello! This is My first Landing page!",
+            subtitle: "This is my subtitle of my first landing page"
+        }
     }
 }

@@ -1,8 +1,21 @@
+import Hero from "@/components/sections/Hero";
+import { notFound } from "next/navigation";
+import { campaigns } from "@/data/content";
 
-export default function Home() {
-  return (
-    <div>
-      
-    </div>
-  );
+
+export default async function Home({params}: { params: Promise<{ campaign: string }>}) {
+    const resolvedParams = await params;
+    const slug = resolvedParams.campaign;
+
+    const data = campaigns[slug as keyof typeof campaigns];
+
+    if(!data) {
+        notFound();
+    }
+
+    return (
+      <main>
+        <Hero {...data.hero}></Hero>
+      </main>
+    )
 }
