@@ -3,8 +3,9 @@ export const campaigns = {
         hero: {
             title: "Hello! This is My first Landing page!",
             subtitle: "This is my subtitle of my first landing page",
-            button: "Faça Avaliação Agora!",
-            imgUrl: ""
+            buttonText: "Faça Avaliação Agora!",
+            buttonUrl: "https:wa.me/5561996095651",
+            imgUrl: "/hero-banner.png"
         },
         pain: {
             title: "Você não está sozinha",
@@ -13,25 +14,25 @@ export const campaigns = {
                     id: 1,
                     title: "Dor 1",
                     desc: "Como a fulana de tal se encontrava",
-                    imgUrl: ""
+                    imgUrl: "/pain-card1.jpeg"
                 },
                 {
                     id: 2,
                     title: "Dor 1",
                     desc: "Como a fulana de tal se encontrava",
-                    imgUrl: ""
+                    imgUrl: "/pain-card2.jpeg"
                 },
                 {
                     id: 3,
                     title: "Dor 1",
                     desc: "Como a fulana de tal se encontrava",
-                    imgUrl: ""
+                    imgUrl: "/pain-card3.jpeg"
                 },
                 {
                     id: 4,
                     title: "Dor 1",
                     desc: "Como a fulana de tal se encontrava",
-                    imgUrl: ""
+                    imgUrl: "/pain-card4.jpeg"
                 }
             ]
         },

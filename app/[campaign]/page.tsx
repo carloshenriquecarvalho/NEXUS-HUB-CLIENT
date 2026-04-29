@@ -1,6 +1,7 @@
 import { campaigns } from "@/data/content";
 import { notFound } from "next/navigation";
 import Hero from "@/components/sections/landing/Hero";
+import Pain from "@/components/sections/landing/Pain"
 
 
 export default async function LandingPage({params}: { params: Promise<{ campaign: string }>}) {
@@ -16,6 +17,7 @@ export default async function LandingPage({params}: { params: Promise<{ campaign
     return (
         <main>
             <Hero {...data.hero}></Hero>
+            <Pain {...data.pain}></Pain>
         </main>
     )
 }
