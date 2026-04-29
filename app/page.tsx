@@ -1,4 +1,4 @@
-import Hero from "@/components/sections/Hero";
+import Hero from "@/components/sections/landing/Hero";
 import { notFound } from "next/navigation";
 import { campaigns } from "@/data/content";
 
