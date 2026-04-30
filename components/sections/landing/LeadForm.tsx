@@ -10,7 +10,6 @@ export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps
         <section id="contato" className="py-24 bg-background">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
                 
-                {/* Map/Location Side */}
                 <motion.div 
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -25,7 +24,7 @@ export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps
                     </div>
                     
                     <div className="w-full h-80 lg:h-full min-h-[300px] bg-shadow rounded-2xl overflow-hidden relative border border-shadow">
-                        {/* Placeholder for Map */}
+
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-title/50 gap-3">
                             <MapPin size={48} className="text-highlight" />
                             <span className="font-serif text-xl">Nossa Localização</span>
@@ -33,7 +32,6 @@ export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps
                     </div>
                 </motion.div>
 
-                {/* Form Side */}
                 <motion.div 
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
