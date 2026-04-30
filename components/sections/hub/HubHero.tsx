@@ -1,13 +1,13 @@
 'use client'
 
-import Button from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { HeroProps } from "@/types/types";
+import Button from "@/components/ui/Button";
+import { HubHeroProps } from "@/types/types";
 
-export default function Hero({ title, subtitle, buttonText, buttonUrl, imgUrl }: HeroProps) {
+export default function HubHero({ title, subtitle, imgUrl }: HubHeroProps) {
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background pt-2">
+        <section className="relative w-full min-h-[calc(100vh-80px)] py-12 lg:py-0 flex items-center justify-center overflow-hidden bg-background">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full">
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
@@ -15,9 +15,9 @@ export default function Hero({ title, subtitle, buttonText, buttonUrl, imgUrl }:
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-6 z-10"
                 >
-                    <div className="inline-block px-4 py-1.5 rounded-full border border-button/30 bg-button/5 w-fit">
+                    <div className="inline-block px-4 rounded-full border border-button/30 bg-button/5 w-fit">
                         <span className="text-button text-xs font-semibold uppercase tracking-widest">
-                            Estética Avançada
+                            Estética de Excelência
                         </span>
                     </div>
                     <h1 className="font-serif font-bold text-5xl md:text-6xl lg:text-[72px] leading-[1.1] text-title">
@@ -26,8 +26,8 @@ export default function Hero({ title, subtitle, buttonText, buttonUrl, imgUrl }:
                     <p className="text-lg md:text-xl text-title/70 max-w-lg font-light leading-relaxed">
                         {subtitle}
                     </p>
-                    <div className="pt-4">
-                        <Button text={buttonText} url={buttonUrl} />
+                    <div className="pt-2 flex gap-4">
+                        <Button text="Nossos Tratamentos" url="#servicos" />
                     </div>
                 </motion.div>
                 
@@ -35,7 +35,7 @@ export default function Hero({ title, subtitle, buttonText, buttonUrl, imgUrl }:
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                    className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl"
+                    className="relative w-full h-[350px] md:h-[450px] lg:h-[500px] xl:h-[560px] rounded-2xl overflow-hidden shadow-2xl"
                 >
                     <div className="absolute inset-0 bg-title/10 z-10 rounded-2xl" />
                     {imgUrl ? (
@@ -54,5 +54,5 @@ export default function Hero({ title, subtitle, buttonText, buttonUrl, imgUrl }:
                 </motion.div>
             </div>
         </section>
-    )
+    );
 }

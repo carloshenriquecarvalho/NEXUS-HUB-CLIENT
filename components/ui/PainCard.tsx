@@ -1,28 +1,59 @@
-import Image from "next/image";
-import { CardItem } from "@/types/types";
+'use client'
 
-interface PainCardProps {
-    cardContent: CardItem[];
-}
+import Image from "next/image";
+import { PainCardProps } from "@/types/types";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+};
 
 export default function PainCard({ cardContent }: PainCardProps) {
     return (
-        <div 
-        className="">
+        <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
             {cardContent.map((card) => (
-                <div 
-                key={card.id} 
-                className="">
-                    <Image
-                    alt="Imagem de Procedimento"
-                    width={296}
-                    height={296}
-                    src={card.imgUrl}
-                    ></Image>
-                    <h3>{card.title}</h3>
-                    <p>{card.desc}</p>
-                </div>
+                <motion.div
+                    variants={itemVariants}
+                    key={card.id} 
+                    className="group flex flex-col rounded-2xl overflow-hidden bg-card hover:shadow-2xl shadow-shadow/50 border border-shadow/50 transition-all duration-300"
+                >
+                    <div className="relative w-full aspect-square overflow-hidden bg-shadow">
+                        {card.imgUrl ? (
+                            <Image
+                                alt={card.title}
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                src={card.imgUrl}
+                            />
+                        ) : (
+                            <div className="w-full h-full flex items-center justify-center text-title/30">
+                                Imagem {card.id}
+                            </div>
+                        )}
+                    </div>
+                    <div className="flex flex-col gap-3 p-6 flex-grow">
+                        <h3 className="font-serif font-bold text-xl text-title">{card.title}</h3>
+                        <p className="text-title/70 text-sm leading-relaxed">{card.desc}</p>
+                    </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     )
 }
