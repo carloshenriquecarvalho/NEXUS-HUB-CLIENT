@@ -186,3 +186,5 @@ export const hubContent: HubContent = {
         }
     }
 };
+
+export const whatsappLink = "https://wa.me/5561996095651";
