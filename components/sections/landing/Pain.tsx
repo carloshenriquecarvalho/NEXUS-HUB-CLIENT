@@ -21,7 +21,20 @@ export default function Pain({ title, cardContent }: PainProps) {
                         Nós entendemos suas necessidades. Nossos tratamentos são focados em realçar o que você tem de melhor.
                     </p>
                 </motion.div>
-                <PainCard cardContent={cardContent}/>
+                <motion.div 
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: { opacity: 1, transition: { staggerChildren: 0.1 } }
+                    }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                >
+                    {cardContent.map((card, index) => (
+                        <PainCard key={card.id} card={card} index={index} />
+                    ))}
+                </motion.div>
             </div>
         </section>
     )

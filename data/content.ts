@@ -69,9 +69,9 @@ const botoxMock = {
     testimonials: {
         title: "O que nossos pacientes dizem",
         cardContent: [
-            { id: 1, title: "Amanda S.", patientImgUrl: "/solution-premium.png", videoUrl: "" },
-            { id: 2, title: "Carolina M.", patientImgUrl: "", videoUrl: "" },
-            { id: 3, title: "Mariana L.", patientImgUrl: "", videoUrl: "" },
+            { id: 1, title: "Amanda S.", patientImgUrl: "/solution-premium.png", videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+            { id: 2, title: "Carolina M.", patientImgUrl: "", videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+            { id: 3, title: "Mariana L.", patientImgUrl: "", videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY" },
         ]
     },
     faq: {
@@ -166,9 +166,9 @@ export const hubContent: HubContent = {
     testimonials: {
         title: "O que Nossos Pacientes Dizem",
         cardContent: [
-            { id: 1, title: "Mariana S.", patientImgUrl: "/aesthetician-premium.png", videoUrl: "" },
-            { id: 2, title: "Fernanda R.", patientImgUrl: "", videoUrl: "" },
-            { id: 3, title: "Luciana T.", patientImgUrl: "", videoUrl: "" },
+            { id: 1, title: "Amanda S.", patientImgUrl: "/aesthetician-premium.png", videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+            { id: 2, title: "Carolina M.", patientImgUrl: "", videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+            { id: 3, title: "Mariana L.", patientImgUrl: "", videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY" },
         ]
     },
     faq: {

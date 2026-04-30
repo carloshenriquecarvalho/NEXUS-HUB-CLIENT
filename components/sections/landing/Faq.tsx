@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { FaqProps } from "@/types/types";
+import FaqAccordionItem from "@/components/ui/FaqAccordionItem";
 
 export default function Faq({ title, cardContent, moreQuestions }: FaqProps) {
     // Filter out potential undefined elements from the mock data array
@@ -27,38 +27,13 @@ export default function Faq({ title, cardContent, moreQuestions }: FaqProps) {
 
                 <div className="flex flex-col w-full gap-4 mb-16">
                     {safeContent.map((faq, index) => (
-                        <motion.div 
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                        <FaqAccordionItem 
                             key={faq.id} 
-                            className="bg-card rounded-xl shadow-sm border border-shadow/50 overflow-hidden"
-                        >
-                            <button 
-                                onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-shadow/10 transition-colors cursor-pointer"
-                            >
-                                <span className="font-serif font-bold text-lg text-title pr-8">{faq.question}</span>
-                                <ChevronDown 
-                                    className={`text-highlight shrink-0 transition-transform duration-300 ${openId === faq.id ? 'rotate-180' : ''}`} 
-                                />
-                            </button>
-                            <AnimatePresence>
-                                {openId === faq.id && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="px-6 pb-5 pt-0 text-title/70">
-                                            {faq.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.div>
+                            faq={faq} 
+                            index={index} 
+                            isOpen={openId === faq.id}
+                            onToggle={() => setOpenId(openId === faq.id ? null : faq.id)}
+                        />
                     ))}
                 </div>
 

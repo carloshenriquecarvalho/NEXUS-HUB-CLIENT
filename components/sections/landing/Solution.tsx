@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { SolutionProps } from "@/types/types";
+import SolutionCard from "@/components/ui/SolutionCard";
 
 export default function Solution({ cardContent }: SolutionProps) {
     if (!cardContent || cardContent.length === 0) return null;
@@ -57,20 +58,7 @@ export default function Solution({ cardContent }: SolutionProps) {
 
                     <div className="flex flex-col gap-6 mt-4">
                         {solutions.map((item, index) => (
-                            <motion.div 
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                key={item.id} 
-                                className="flex gap-4 items-start"
-                            >
-                                <CheckCircle2 className="text-highlight shrink-0 mt-1" size={24} />
-                                <div className="flex flex-col">
-                                    <h4 className="font-serif font-bold text-xl text-title">{item.solutionTitle}</h4>
-                                    <p className="text-title/70 text-sm mt-1">{item.solutionDescription}</p>
-                                </div>
-                            </motion.div>
+                            <SolutionCard key={item.id} item={item} index={index} />
                         ))}
                     </div>
                 </motion.div>

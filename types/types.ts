@@ -20,7 +20,8 @@ export interface HeroProps {
 }
 
 export interface PainCardProps {
-    cardContent: CardItem[];
+    card: CardItem;
+    index: number;
 }
 
 export interface PainProps {
