@@ -6,7 +6,8 @@ export default function FormButton({ campaign }: FormButtonProps) {
     const handleFormClick =() => {
         sendGTMEvent({
             event: "form_submit_whatsapp",
-            form_name: `landing_page_${campaign}`
+            form_name: `landing_page`,
+            campaign: campaign
         });
 
         setTimeout(() => {
