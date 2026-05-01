@@ -1,11 +1,12 @@
 import { sendGTMEvent } from "@next/third-parties/google";
+import { FormButtonProps } from "@/types/types";
 
-export default function FormButton() {
+export default function FormButton({ campaign }: FormButtonProps) {
 
     const handleFormClick =() => {
         sendGTMEvent({
             event: "form_submit_whatsapp",
-            form_name: "contact"
+            form_name: `landing_page_${campaign}`
         });
 
         setTimeout(() => {

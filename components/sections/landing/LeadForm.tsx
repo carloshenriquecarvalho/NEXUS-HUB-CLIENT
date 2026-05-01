@@ -1,12 +1,11 @@
 'use client'
 
 import { motion } from "framer-motion";
-import Button from "@/components/ui/Button";
 import { MapPin } from "lucide-react";
 import { LeadFormProps } from "@/types/types";
 import FormButton from "@/components/ui/FormButton";
 
-export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps) {
+export default function LeadForm({ title, subtitle, locationUrl, campaign }: LeadFormProps) {
     return (
         <section id="contato" className="py-24 bg-background">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
@@ -72,7 +71,7 @@ export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps
                         </div>
 
                         <div className="mt-6">
-                            <FormButton />
+                            <FormButton campaign={campaign} />
                         </div>
                         <p className="text-xs text-title/50 text-center mt-4">
                             Seus dados estão seguros conosco. Retornaremos o contato em até 24 horas.

@@ -80,6 +80,7 @@ export interface LeadFormProps {
     title: string;
     subtitle: string;
     locationUrl?: string;
+    campaign: string;
 }
 
 export interface CtaProps {
@@ -115,4 +116,8 @@ export interface HubContent {
     results: BenefitsProps;
     testimonials: TestimonialsProps;
     faq: FaqProps;
+}
+
+export interface FormButtonProps {
+    campaign: string;
 }

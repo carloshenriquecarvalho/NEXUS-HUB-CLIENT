@@ -50,7 +50,7 @@ export default async function LandingPage({params}: { params: Promise<{ campaign
                 <Benefits {...data.benefits} />
                 <Testimonials {...data.testimonials} />
                 <Faq {...data.faq} />
-                <LeadForm {...data.leadForm} />
+                <LeadForm {...data.leadForm} campaign={slug} />
                 <Cta {...data.cta} />
             </main>
             <Footer />
