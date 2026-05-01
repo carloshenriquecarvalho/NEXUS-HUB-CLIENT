@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { MapPin } from "lucide-react";
 import { LeadFormProps } from "@/types/types";
+import FormButton from "@/components/ui/FormButton";
 
 export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps) {
     return (
@@ -71,7 +72,7 @@ export default function LeadForm({ title, subtitle, locationUrl }: LeadFormProps
                         </div>
 
                         <div className="mt-6">
-                            <Button text="Enviar Solicitação" url="#" />
+                            <FormButton />
                         </div>
                         <p className="text-xs text-title/50 text-center mt-4">
                             Seus dados estão seguros conosco. Retornaremos o contato em até 24 horas.
